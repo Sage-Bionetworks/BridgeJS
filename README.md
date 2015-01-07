@@ -1,4 +1,4 @@
 BridgeJS
 ========
 
-Bridge web client in JavaScript
+Bridge web client in JavaScript.
