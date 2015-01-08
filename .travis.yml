@@ -1,0 +1,8 @@
+language: node_js
+install:
+- npm install -g bower
+- npm install -g grunt-cli
+- gem install sass
+script:
+- bash update-js.sh
+- grunt release
