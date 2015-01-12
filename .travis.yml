@@ -10,8 +10,9 @@ deploy:
   provider: s3
   skip_cleanup: true
   acl: public_read
-env:
-  global:
-  - secure: mPdjOCp02RuLbjIX382VfYF6BgoLB/Q3jY17hTXXIr13503U4+QBUZaIWiUTnS5SX0e1ZMhrypfE1k6WezV6ogZr1Hdppk+G37ZVF7Ggy5j9jm6/hhmBjlt/X4f1oU1GAhCsMsNF4p6aOL8SeY0CGFiWUJHctD1UQxJyrRa6Bck=
-  - secure: AbaEkeraf41SMm4VhHLzOxPI+94o4SQj+NvviJwq6t3BIHUw6gmmGfTKcVjsHL419RtNMlZNNeiXl6KAtLpFQ1q2avYyDaF43JZe95O34XxE6h3/+oC/5RYLKC5Vg1dC5rL6H7/bwdZy9B3qytUcJnia2YXLW+86uxfjPeCtcqQ=
-  - secure: FSw8qCoc5r1eOj65MIx6dZGyt+BmPV2O14tTxxOm8XjMAd+ibEpBOBDNE/8gLOatvzBTUsOakR0NYWTYgqrDGs+tbzggz4rjuJJuCKFJicP3PKVMmziDa2OSYwb+X2x8Zz1vVNC0TdaisAusviE9YOiHZgHoX8eRnWRvDDoHGHY=
+  bucket:
+    secure: XBdIB2RhvE1WXthAI4yBeRvO9148aKVQSff3U4laZqytzZnD5cax47uiNCN1cZI5vGV9d0NDKnb9/EDHFJhDjEFraYeI929+tiCzFeRxYEEoGAvQ7XPNxvhk3uUdl5+zm1/2E+Re6Mc5m6dOoepg/GRA2n5t3h9rH5dlCtGRc64=
+  access_key_id:
+    secure: kWbdSdjOHUuhGK5sQebCdoeIfAx6R04RqTTFRV6azxpSY+hJsFFtM9YUyjeIdzYvEzAr/jE7r+/U+1pW2bRHpvIN9yWoLiS9akRB0yYhyzRrDTW2lVPrKzJ0eg6IkleqUKo+PjsxYv2xsW8otjiL4Z83YSPpVnH89Y2gX9LSHg4=
+  secret_access_key:
+    secure: E3F5hon3MKIxsxkXsyForJBnYPdmn5jh0AD8CKjJtl43I24nUR5uwBfLsDjhRWNHUpZeTTxJ2SFhKmVLrvKQOA5tOGZH6t20MltWHzGOZEnq6JEqCwR/DaQGzlqgjt/M7YJWgLAeAso52LvqtJ54mbJjVUVQ5wc4tnETPK8KBeE=
