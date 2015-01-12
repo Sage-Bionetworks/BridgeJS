@@ -7,7 +7,7 @@ module.exports = function(grunt) {
                 concurrent: 5 // as many as there are projects.
             },
             all: {
-                src: ['shared/Gruntfile.js', 'app/Gruntfile.js', 'neurod/Gruntfile.js', 'consent/Gruntfile.js', 'test/Gruntfile.js'],
+                src: ['shared/Gruntfile.js', 'app/Gruntfile.js', 'neurod/Gruntfile.js', 'consent/Gruntfile.js'],
                 tasks: ['test','build','default','release','watch','clean']
             }
         },
