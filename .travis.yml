@@ -6,3 +6,12 @@ install:
 script:
 - bash update-js.sh
 - grunt release
+deploy:
+  provider: s3
+  skip_cleanup: true
+  acl: public_read
+env:
+  global:
+  - secure: mPdjOCp02RuLbjIX382VfYF6BgoLB/Q3jY17hTXXIr13503U4+QBUZaIWiUTnS5SX0e1ZMhrypfE1k6WezV6ogZr1Hdppk+G37ZVF7Ggy5j9jm6/hhmBjlt/X4f1oU1GAhCsMsNF4p6aOL8SeY0CGFiWUJHctD1UQxJyrRa6Bck=
+  - secure: AbaEkeraf41SMm4VhHLzOxPI+94o4SQj+NvviJwq6t3BIHUw6gmmGfTKcVjsHL419RtNMlZNNeiXl6KAtLpFQ1q2avYyDaF43JZe95O34XxE6h3/+oC/5RYLKC5Vg1dC5rL6H7/bwdZy9B3qytUcJnia2YXLW+86uxfjPeCtcqQ=
+  - secure: FSw8qCoc5r1eOj65MIx6dZGyt+BmPV2O14tTxxOm8XjMAd+ibEpBOBDNE/8gLOatvzBTUsOakR0NYWTYgqrDGs+tbzggz4rjuJJuCKFJicP3PKVMmziDa2OSYwb+X2x8Zz1vVNC0TdaisAusviE9YOiHZgHoX8eRnWRvDDoHGHY=
