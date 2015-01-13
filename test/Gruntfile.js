@@ -7,7 +7,10 @@ module.exports = function(grunt) {
     grunt.initConfig({
         token: "test",
         output: "build",
-        
+        clean: {
+            build: ['<%= output %>'],
+            release: ['bower_components', 'node_modules']
+        },
         hashres: {
             options: {
                 encoding: 'utf8',
@@ -22,6 +25,6 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('watch', ['hashres']);
-    grunt.registerTask('default', ['hashres']);
-    grunt.registerTask('release', ['hashres']);
+    grunt.registerTask('default', ['clean:build', 'hashres']);
+    grunt.registerTask('release', ['clean:release', 'hashres']);
 };
