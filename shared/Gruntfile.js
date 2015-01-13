@@ -92,7 +92,7 @@ module.exports = function(grunt) {
             },
             execute: {
                 src: ['<%= output %>/*.min.js', '<%= output %>/*.min.css'],
-                dest: []
+                dest: ['../../app/views/*.scala.html']
             }
         },
         watch: {
