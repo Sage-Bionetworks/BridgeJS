@@ -1,6 +1,8 @@
 BridgeJS
 ========
 
+[![Build Status](https://travis-ci.org/Sage-Bionetworks/BridgeJS.svg?branch=master)](https://travis-ci.org/Sage-Bionetworks/BridgeJS)
+
 Bridge web client in JavaScript.
 
 1. Initialize Vagrant `vagrant up`.
