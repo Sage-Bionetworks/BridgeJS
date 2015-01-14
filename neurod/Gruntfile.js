@@ -13,7 +13,6 @@ module.exports = function(grunt) {
     grunt.initConfig({
         token: "neurod",
         output: "build",
-        
         clean: {
             build: ['<%= output %>'],
             release: ['bower_components', 'node_modules']
@@ -57,17 +56,6 @@ module.exports = function(grunt) {
                 sourceMap: true
             }
         },
-        hashres: {
-            options: {
-                encoding: 'utf8',
-                fileNameFormat: '${name}.${hash}.${ext}',
-                renameFile: true
-            },
-            execute: {
-                src: ['<%= output %>/*.min.js', '<%= output %>/*.min.css'],
-                dest: []
-            }
-        },
         watch: {
             all: {
                 files: ['Gruntfile.js', 'scripts/**/*.js', 'styles/**/*.scss', 'styles/**/*.css'],
@@ -78,7 +66,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('test', ['build']);
-    grunt.registerTask('build', ['jshint', 'clean:build', 'concat', 'sass', 'uglify', 'hashres']);
-    grunt.registerTask('default', ['jshint', 'clean:build', 'concat', 'sass', 'uglify', 'hashres']);
+    grunt.registerTask('build', ['jshint', 'clean:build', 'concat', 'sass', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'clean:build', 'concat', 'sass', 'uglify']);
     grunt.registerTask('release', ['test', 'clean:release']);
 };
