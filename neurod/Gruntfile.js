@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         token: "neurod",
-        output: "build",
+        output: "build/" + grunt.template.today('yyyymmddHHMM'),
         clean: {
             build: ['<%= output %>'],
             release: ['bower_components', 'node_modules']

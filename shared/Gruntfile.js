@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     
     grunt.initConfig({
         token: "bridge-shared",
-        output: "build",
+        output: "build/" + grunt.template.today('yyyymmddHHMM'),
         clean: {
             build: ['<%= output %>'],
             release: ['bower_components', 'node_modules']
