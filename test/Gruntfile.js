@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         token: "test",
         output: "build/" + grunt.template.today('yyyymmddHHMM'),
         clean: {
-            build: ['<%= output %>'],
+            build: ['build'],
             release: ['bower_components', 'node_modules']
         }
     });
