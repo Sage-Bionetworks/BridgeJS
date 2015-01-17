@@ -1,8 +1,5 @@
 # This starts and ends in public/ directory
-cd app/
-npm install
-bower install
-cd ../shared
+cd shared
 npm install
 bower install
 cd ../neurod
