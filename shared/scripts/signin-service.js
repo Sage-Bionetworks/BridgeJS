@@ -48,7 +48,7 @@ bridgeShared.service('signInService', ['$modal', function($modal) {
         };
         $scope.resetPassword = function() {
             $scope.cancel();
-            modalService.openModal('RequestResetPasswordModalController', 'sm', '/shared/views/requestResetPassword.html');
+            modalService.openModal('RequestResetPasswordModalController', 'sm', 'https://' + window.assetsHost + '/shared/views/requestResetPassword.html');
         };
     }];
     
@@ -59,7 +59,7 @@ bridgeShared.service('signInService', ['$modal', function($modal) {
             }
             if (modalInstance === null) {
                 modalInstance = $modal.open({
-                    templateUrl: '/shared/views/signIn.html',
+                    templateUrl: 'https://' + window.assetsHost + '/shared/views/signIn.html',
                     controller: ModalInstanceController,
                     size: 'sm',
                     windowClass: 'sm'
