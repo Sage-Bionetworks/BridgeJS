@@ -17,24 +17,24 @@ var test = angular.module('test', ['bridge.shared']);
 test.config(function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
         'self',
-        'https://' + window._assetsHost + '/**'
+        'https://' + window.assetsHost + '/**'
     ]);
 })
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/joined/:email', {
-        templateUrl: '//' + window._assetsHost + '/test/views/joined.html',
+        templateUrl: '//' + window.assetsHost + '/test/views/joined.html',
         controller: 'JoinedController'
     })
     .when('/verifyEmail', {
-        templateUrl: '//' + window._assetsHost + '/test/views/verify-email.html',
+        templateUrl: '//' + window.assetsHost + '/test/views/verify-email.html',
         controller: 'VerifyEmailController'
     })
     .when('/consent', {
-        templateUrl: '//' + window._assetsHost + '/test/views/consent.html',
+        templateUrl: '//' + window.assetsHost + '/test/views/consent.html',
         controller: "ConsentController"
     })
     .otherwise({
-        templateUrl: '//' + window._assetsHost + '/test/views/main.html',
+        templateUrl: '//' + window.assetsHost + '/test/views/main.html',
         controller: 'MainController'
     });
 }])
