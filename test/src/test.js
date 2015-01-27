@@ -14,21 +14,27 @@ angular.module('bridge.shared').factory('interceptAuth', function($q, $injector,
 
 var test = angular.module('test', ['bridge.shared']);
 
-test.config(['$routeProvider', function($routeProvider) {
+test.config(function($sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist([
+        'self',
+        'https://' + window._assetsHost + '/**'
+    ]);
+})
+.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/joined/:email', {
-        templateUrl: window.staticHost + '/test/views/joined.html',
+        templateUrl: '//' + window._assetsHost + '/test/views/joined.html',
         controller: 'JoinedController'
     })
     .when('/verifyEmail', {
-        templateUrl: window.staticHost + '/test/views/verify-email.html',
+        templateUrl: '//' + window._assetsHost + '/test/views/verify-email.html',
         controller: 'VerifyEmailController'
     })
     .when('/consent', {
-        templateUrl: window.staticHost + '/test/views/consent.html',
+        templateUrl: '//' + window._assetsHost + '/test/views/consent.html',
         controller: "ConsentController"
     })
     .otherwise({
-        templateUrl: window.staticHost + '/test/views/main.html',
+        templateUrl: '//' + window._assetsHost + '/test/views/main.html',
         controller: 'MainController'
     });
 }])
