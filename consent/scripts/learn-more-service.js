@@ -15,7 +15,7 @@ angular.module('consent').service('learnMoreService', ['$modal', function($modal
         open: function(tag) {
             var size = (window.screen.width < 1024) ? 'sm' : 'lg';
             // This will eventually change by study
-            var url = "/neurod/views/learn_more/" + tag + ".html";
+            var url = "https://" + window.assetsHost + "/neurod/views/learn_more/" + tag + ".html";
             modalInstance = $modal.open({
                 templateUrl: url,
                 controller: ModalInstanceController,
