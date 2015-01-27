@@ -17,5 +17,5 @@ if (!titles[host]) {
 
 setTimeout(function() {
     document.title = titles[host] + " " + document.title;
-    $("#logo").attr("src","/mobile/images/"+host+".svg");
+    $("#logo").attr("src", "//" + window.assetsHost + "/mobile/images/"+host+".svg");
 }, 1);
