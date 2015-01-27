@@ -22,19 +22,19 @@ test.config(function($sceDelegateProvider) {
 })
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/joined/:email', {
-        templateUrl: '//' + window.assetsHost + '/test/views/joined.html',
+	templateUrl: 'https://' + window.assetsHost + '/test/views/joined.html',
         controller: 'JoinedController'
     })
     .when('/verifyEmail', {
-        templateUrl: '//' + window.assetsHost + '/test/views/verify-email.html',
+	templateUrl: 'https://' + window.assetsHost + '/test/views/verify-email.html',
         controller: 'VerifyEmailController'
     })
     .when('/consent', {
-        templateUrl: '//' + window.assetsHost + '/test/views/consent.html',
+	templateUrl: 'https://' + window.assetsHost + '/test/views/consent.html',
         controller: "ConsentController"
     })
     .otherwise({
-        templateUrl: '//' + window.assetsHost + '/test/views/main.html',
+	templateUrl: 'https://' + window.assetsHost + '/test/views/main.html',
         controller: 'MainController'
     });
 }])
