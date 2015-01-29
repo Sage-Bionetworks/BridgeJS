@@ -111,10 +111,10 @@ function($scope, $humane, $window, $http, formService, learnMoreService, authSer
         monitorstate = 1;
         sensorsFooter.addClass("flipped");
         sensorsFooter.text("Turn your phone right side up to continue.");
-        sensorsImage[0].src = "consent/images/upside_down_phone.svg";
+        sensorsImage[0].src = "https://" + window.assetsHost + "consent/images/upside_down_phone.svg";
     }
     function endMonitor() {
-        sensorsImage[0].src = "consent/images/phonesensordata.svg";
+        sensorsImage[0].src = "https://" + window.assetsHost + "consent/images/phonesensordata.svg";
         monitorstate = 0;
         window.removeEventListener('deviceorientation', monitor);
         setTimeout(function() {

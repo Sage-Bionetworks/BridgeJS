@@ -12,19 +12,24 @@ if ( !window.requestAnimationFrame ) {
 
 var neurod = angular.module('neurod', ['bridge.shared']);
 
-neurod.config(['$routeProvider', function($routeProvider) {
+neurod.config(function($sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist([
+        'self',
+	'https://' + window.assetsHost + '/**'
+    ]);
+}).config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/about', {
-        templateUrl: '/neurod/views/about.html'
+        templateUrl: 'https://' + window.assetsHost + '/neurod/views/about.html'
     })
     .when('/join', {
-        templateUrl: '/neurod/views/join.html',
+        templateUrl: 'https://' + window.assetsHost + '/neurod/views/join.html',
         controller: 'JoinController'
     })
     .when('/joined/:email', {
-        templateUrl: '/neurod/views/joined.html',
+        templateUrl: 'https://' + window.assetsHost + '/neurod/views/joined.html',
         controller: 'JoinedController'
     })
     .otherwise({
-        templateUrl: '/neurod/views/main.html'
+        templateUrl: 'https://' + window.assetsHost + '/neurod/views/main.html'
     });
 }]);

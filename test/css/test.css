@@ -13,7 +13,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(../images/gplaypattern_alpha.png);
+    background-image: url(https://assets.sagebridge.org/test/images/gplaypattern_alpha.png);
     overflow: auto;
 }
 .jumbotron { 

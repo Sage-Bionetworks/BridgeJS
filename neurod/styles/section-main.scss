@@ -3,7 +3,7 @@ section.main {
         h2 {
             background-color: $lightBlue;
             div {
-                background: transparent url(../images/aboutthestudy_icon_white.svg) 1rem center no-repeat;
+                background: transparent url(https://assets.sagebridge.org/neurod/images/aboutthestudy_icon_white.svg) 1rem center no-repeat;
                 background-size: 5.5rem;
             }
         }
@@ -12,7 +12,7 @@ section.main {
         h2 {
             background-color: $orange;
             div {
-                background: transparent url(../images/participantstories_icon_white.svg) 1.8rem center no-repeat;
+                background: transparent url(https://assets.sagebridge.org/neurod/images/participantstories_icon_white.svg) 1.8rem center no-repeat;
                 background-size: 5.5rem;
             }
         }
@@ -21,7 +21,7 @@ section.main {
         h2 {
             background-color: $blue;
             div {
-                background: transparent url(../images/meettheresearchers_icon_white.svg) 1.8rem center no-repeat;
+                background: transparent url(https://assets.sagebridge.org/neurod/images/meettheresearchers_icon_white.svg) 1.8rem center no-repeat;
                 background-size: 5.5rem;
             }
         }
@@ -32,7 +32,7 @@ section.main {
         h2 {
             background-color: $pink;
             div {
-                background: transparent url(../images/researchersjournal_icon_white.svg) 2rem center no-repeat;
+                background: transparent url(https://assets.sagebridge.org/neurod/images/researchersjournal_icon_white.svg) 2rem center no-repeat;
                 background-size: 4.5rem;
             }
         }
@@ -107,23 +107,23 @@ section.main {
                     letter-spacing: 1px;
                 }
                 &:nth-child(1) h4 {
-                    background: transparent url(../images/howitworks_1.svg) center top no-repeat;
+                    background: transparent url(https://assets.sagebridge.org/neurod/images/howitworks_1.svg) center top no-repeat;
                     background-size: 10rem;
                 }
                 &:nth-child(2) h4 {
-                    background: transparent url(../images/howitworks_2.svg) center top no-repeat;
+                    background: transparent url(https://assets.sagebridge.org/neurod/images/howitworks_2.svg) center top no-repeat;
                     background-size: 10rem;
                 }
                 &:nth-child(3) h4 {
-                    background: transparent url(../images/howitworks_3.svg) center top no-repeat;
+                    background: transparent url(https://assets.sagebridge.org/neurod/images/howitworks_3.svg) center top no-repeat;
                     background-size: 10rem;
                 }
                 &:nth-child(4) h4 {
-                    background: transparent url(../images/howitworks_4.svg) center top no-repeat;
+                    background: transparent url(https://assets.sagebridge.org/neurod/images/howitworks_4.svg) center top no-repeat;
                     background-size: 10rem;
                 }
                 &:nth-child(5) h4 {
-                    background: transparent url(../images/howitworks_5.svg) center top no-repeat;
+                    background: transparent url(https://assets.sagebridge.org/neurod/images/howitworks_5.svg) center top no-repeat;
                     background-size: 10rem;
                 }
                 p {
@@ -148,9 +148,9 @@ section.main {
 }
 .participant_stories {
     .left_control div {
-        background: transparent url(../images/participantstories_arrow.svg) center no-repeat;
+        background: transparent url(https://assets.sagebridge.org/neurod/images/participantstories_arrow.svg) center no-repeat;
     }
     .right_control div {
-        background: transparent url(../images/participantstories_arrow.svg) center no-repeat;
+        background: transparent url(https://assets.sagebridge.org/neurod/images/participantstories_arrow.svg) center no-repeat;
     }
 }
