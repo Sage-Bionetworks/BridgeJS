@@ -140,7 +140,7 @@ form[name='signInForm'] {
     .inner-box {
         display: table;
         width: 100%;
-        background: transparent url(/neurod/images/bridge_logo.svg) left center no-repeat;
+        background: transparent url(https://assets.sagebridge.org/neurod/images/bridge_logo.svg) left center no-repeat;
         background-size: 9rem;
         
         > * {
@@ -172,7 +172,7 @@ form[name='signInForm'] {
 }
     
 .splash {
-    background: white url(/neurod/images/landingpagephoto.jpg) center no-repeat;
+    background: white url(https://assets.sagebridge.org/neurod/images/landingpagephoto.jpg) center no-repeat;
     background-size: constrain;
     height: 30rem;
     position: relative;
@@ -219,7 +219,7 @@ footer {
         .sage_logo {
             width: 23.1rem;
             height: 6rem;
-            background: transparent url(../images/sage_logo.svg) center left no-repeat;
+            background: transparent url(https://assets.sagebridge.org/neurod/images/sage_logo.svg) center left no-repeat;
             background-size: contain;
             @include flex_1;
         }
@@ -229,7 +229,7 @@ footer {
         .rwjf_logo {
             width: 23.1rem;
             height: 6rem;
-            background: transparent url(../images/rwjf_logo.svg) center right no-repeat;
+            background: transparent url(https://assets.sagebridge.org/neurod/images/rwjf_logo.svg) center right no-repeat;
             background-size: contain;
             @include flex_1;
         }

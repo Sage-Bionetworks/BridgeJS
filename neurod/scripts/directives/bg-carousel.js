@@ -63,13 +63,12 @@ neurod.controller('BgCarouselController', ['$scope', function($scope) {
     
 }])
 .directive('bgCarousel', function() {
-    
     return {
         restrict: 'E',
         replace: false,
         transclude: true,
         scope: {},
-        templateUrl: 'neurod/views/carousel.html',
+        templateUrl: 'https://' + window.assetsHost + 'neurod/views/carousel.html',
         controller: 'BgCarouselController',
         link: function(scope, element, attrs, controller) {
             controller.init(element);

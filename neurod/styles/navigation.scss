@@ -27,15 +27,15 @@ nav {
             @include flex_1;        
         }
         > div:nth-child(1) {
-            background: transparent url(../images/aboutthestudy_icon_white.svg) 1rem center no-repeat;
+            background: transparent url(https://assets.sagebridge.org/neurod/images/aboutthestudy_icon_white.svg) 1rem center no-repeat;
             background-size: 5rem;
         }
         > div:nth-child(2) {
-            background: transparent url(../images/participantstories_icon_white.svg) 1rem center no-repeat;
+            background: transparent url(https://assets.sagebridge.org/neurod/images/participantstories_icon_white.svg) 1rem center no-repeat;
             background-size: 4.5rem;
         }
         > div:nth-child(4) {
-            background: transparent url(../images/meettheresearchers_icon_white.svg) 1rem center no-repeat;
+            background: transparent url(https://assets.sagebridge.org/neurod/images/meettheresearchers_icon_white.svg) 1rem center no-repeat;
             background-size: 5rem;
         }
         > div:nth-child(3) { /* JOIN */
@@ -63,7 +63,7 @@ nav {
             }
         }
         > div:nth-child(5) {
-            background: transparent url(../images/researchersjournal_icon_white.svg) 1rem center no-repeat;
+            background: transparent url(https://assets.sagebridge.org/neurod/images/researchersjournal_icon_white.svg) 1rem center no-repeat;
             background-size: 4.5rem;
         }
         > div.selected {
