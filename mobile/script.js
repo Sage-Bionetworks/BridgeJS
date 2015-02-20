@@ -12,7 +12,10 @@ location.search.substr(1).split("&").forEach(function(item) {var k = item.split(
 
 var host = qd.study;
 if (!titles[host]) {
-    host = "api";
+    host = document.location.host.match(/^(.*?)\W/)[1];
+}
+if (!titles[host]) {
+    host = "api";    
 }
 
 setTimeout(function() {
