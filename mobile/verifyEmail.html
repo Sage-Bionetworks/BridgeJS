@@ -4,33 +4,40 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Email Verification</title>
-    <script>window.assetsHost = 'assets.sagebridge.org';</script>
-    <link href="//assets.sagebridge.org/mobile/styles/normalize.css" type="text/css" rel="stylesheet"/>
-    <link href="//assets.sagebridge.org/mobile/styles/mobile.css" type="text/css" rel="stylesheet"/>
+    <link href="/mobile/styles/normalize.css" type="text/css" rel="stylesheet"/>
+    <link href="/mobile/styles/mobile.css" type="text/css" rel="stylesheet"/>
+   <style type="text/css">
+    	.message { margin: 10px 10px; }
+    	.message2 { margin: 10px 20px; text-align: left; }
+    </style>
 </head>
 <body>
 
 <div class="logo_box"><img id="logo" onerror="this.style.visibility='hidden'"/></div>
 <div class="message" id="m1">Verifying...</div>
 <div class="message" id="m2"></div>
+<div class="message2" id="m3"></div>
+<div class="message2" id="m4"></div>
 
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="//assets.sagebridge.org/mobile/script.js"></script>
+<script src="/mobile/script2.js"></script>
 <script>
 function success() {
     $("#m1").text("Your email address has now been verified.");
-    $("#m2").text("You can now use the "+titles[host]+" application.");
+    $("#m2").text("You can now leave this web page and go back to the "+study.title+" application.");
+    $("#m3").html("<p>We are sending a copy of your consent to your email address. Please check your spam folder if you do not receive your consent. You may also try adding <code>"+study.email+"</code> to your contacts before resending the consent.</p>");
+    $("#m4").html("<p>Yahoo users, Yahoo often fails to deliver these consent emails. You may wish to register again using another email address.</p>");
 }
 function failure() {
+    console.log(arguments);
     $("#m1").text("Your email address could not be verified.");
-    $("#m2").text("Contact technical support for this study to receive further assistance.");
+    $("#m2").html("Please refresh the page; if the problem persists, contact <a href='"+study.email+"'>"+study.email+"</a> to receive further assistance.");
 }
-
 try {
     var p = $.ajax({
         type: "POST",
-        url: "/api/v1/auth/verifyEmail",
-        data: JSON.stringify({"sptoken":qd.sptoken[0]}),
+        url: webservices+"/api/v1/auth/verifyEmail",
+        data: JSON.stringify({"sptoken":params.sptoken[0], "study":study.id}),
         contentType: "application/json, charset=utf-8",
         dataType: "json"
     });
@@ -41,9 +48,11 @@ try {
         } else {
             try {
                 var message = response.responseJSON.message;
-                if (message === "The requested resource does not exist.") {
-                    $("#m1").text("Your email address has already been verified.");
-                    $("#m2").text("You can currently use the "+titles[host]+" application.");
+                if (message === "Account not found.") {
+                    $("#m1").text("It looks like your email address has already been verified.");
+                    $("#m2").text("You can try using the "+study.title+" application at this point.");
+                    $("#m3").html("<p>We are sending a copy of your consent to your email address. Please check your spam folder if you do not receive your consent. You may also try adding <code>"+study.email+"</code> to your contacts before resending the consent.</p>");
+                    $("#m4").html("<p>Yahoo users, Yahoo often fails to deliver these consent emails. You may wish to register again using another email address.</p>");
                 } else {
                     failure();
                 }
