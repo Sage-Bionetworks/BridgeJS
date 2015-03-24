@@ -46,6 +46,6 @@ input {
 	line-height: 20px;
 	padding: 10px;
 }
-#errorMessage {
+#errorMessage, #no-cors {
 	display: none;
 }
