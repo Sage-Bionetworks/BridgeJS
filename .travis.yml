@@ -10,6 +10,7 @@ deploy:
   provider: s3
   skip_cleanup: true
   acl: public_read
+  cache_control: "max-age=300"
   on:
     branch: release
   bucket:
