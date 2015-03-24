@@ -30,11 +30,13 @@
     <p>It looks like your email address has already been verified.</p>
     <p>You can try using the <span id="study-name"></span> application at this point.</p>
 </div>
-
+<div class="message" id="no-cors">
+    <p>This browser cannot contact the server. You'll need to use a more modern browser (we're sorry).</p>
+</div>
 <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
 <script src="/mobile/script2.js"></script>
 <script>
-function success() {
+function done() {
     $("#verifying").hide();
     $("#study-name").text(study.title);
     $("#success").show();
@@ -49,30 +51,37 @@ function notFound() {
     $("#study-name").text(study.title);
     $("#not-found").show();
 }
-try {
-    var p = $.ajax({
-        type: "POST",
-        url: webservices+"/api/v1/auth/verifyEmail",
-        data: JSON.stringify({"sptoken":params.sptoken[0], "study":study.id}),
-        contentType: "application/json, charset=utf-8",
-        dataType: "json"
-    });
-	// The response in the success case is 412, accept terms of study
-    p.done(success).fail(function(response) {
-        if (response.status === 412) {
-            success();
+function noCors() {
+    $("#verifying").hide();
+    $("#no-cors").show();
+}
+function fail(response) {
+    if (response.status === 412) {
+        done();
+    } else {
+        var message = response.responseJSON.message;
+        if (message === "Account not found.") {
+            notFound();
         } else {
-            var message = response.responseJSON.message;
-            if (message === "Account not found.") {
-                notFound();
-            } else {
-                failure();
-            }
+            failure();
         }
-    });
-} catch(e) { // happens if the query string is wrong.
-    console.log(e);
-    failure();
+    }
+}
+if (!$.support.cors) {
+    noCors();
+} else {
+    try {
+        var p = $.ajax({ type: "POST", dataType: "json",
+            url: webservices+"/api/v1/auth/verifyEmail",
+            data: JSON.stringify({"sptoken":params.sptoken[0], "study":study.id}),
+            contentType: "application/json, charset=utf-8"
+        });
+        // The response in the success case is 412, accept terms of study
+        p.done(done).fail(fail);
+    } catch(e) { // happens if the query string is wrong.
+        console.log(e);
+        failure();
+    }
 }
 
 </script>
